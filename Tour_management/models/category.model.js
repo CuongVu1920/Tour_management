@@ -5,26 +5,11 @@ mongoose.plugin(slug);
 const schema = new mongoose.Schema(
   {
    name: String,
-   category: String,
+   parent: String,
    position: Number,
    status: String,
    avatar: String,
-   priceAdult: Number,
-   priceChildren: Number,
-   priceBaby: Number,
-   priceNewAdult: Number,
-   priceNewChildren: Number,
-   priceNewBaby: Number,
-   stockAdult: Number,
-   stockChildren: Number,
-   stockBaby: Number,
-   locations: Array,
-   time: String,
-   vehicle: String,
-   departureDate: Date,
-   information: String,
-   schedules: Array,
-   images: Array,
+   description: String,
    createdBy: String,
    updatedBy: String,
    slug: {
@@ -44,6 +29,6 @@ const schema = new mongoose.Schema(
   }
 );
 
-const Tour = mongoose.model('Tour', schema, "tours");
+const Category = mongoose.model('Category', schema, "categories");
 
-module.exports = Tour;
+module.exports = Category;
